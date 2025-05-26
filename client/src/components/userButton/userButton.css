@@ -1,0 +1,29 @@
+.userButton {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border: 100%;
+}
+
+.arrow {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.loginLink {
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 32px;
+}
+
+.loginLink:hover {
+  background-color: #f1f1f1;
+  transition: ease-in 0.6s;
+}
