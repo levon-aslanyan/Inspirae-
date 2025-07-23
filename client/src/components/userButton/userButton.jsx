@@ -1,18 +1,26 @@
 import { useState } from "react";
+import ItemImage from "../itemImage/ItemImage";
 import "./UserButton.css";
 
 const UserButton = () => {
   const [open, setOpen] = useState(false);
   const currentUser = true;
+  const URL = import.meta.env.VITE_URL_IK_ENDPOINT;
 
   return currentUser ? (
     <div className="userButton">
-      <img className="userAvatar" src="./general/noAvatar.png" alt="" />
-      <img
-        onClick={() => setOpen((prev) => !prev)}
+      <ItemImage
+        className="userAvatar"
+        url={URL}
+        path="/general/noAvatar.png"
+        alt="Avatar"
+      />
+      <ItemImage
+        path="/general/arrow.svg"
+        url={URL}
+        alt="Arrow"
         className="arrow"
-        src="./general/arrow.svg"
-        alt=""
+        onClick={() => setOpen((prev) => !prev)}
       />
       {open && (
         <div className="userOptions">
