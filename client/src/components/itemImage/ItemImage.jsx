@@ -1,16 +1,16 @@
 import { Image } from "@imagekit/react";
-import { lazy } from "react";
 
-const ItemImage = ({ path, alt, classname, w, h, url }) => {
+const ItemImage = ({ path, alt, className, w, h, url, onClick }) => {
   return (
     <Image
       urlEndpoint={url}
       src={path}
       transformation={[{ width: w, height: h }]}
-      loading={lazy}
+      loading="lazy"
       lqip={{ active: true, quality: 20 }}
       alt={alt}
-      classname={classname}
+      className={className}
+      onClick={onClick}
     />
   );
 };
