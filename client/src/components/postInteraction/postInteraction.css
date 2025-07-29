@@ -1,0 +1,20 @@
+.interactionPost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.interactionIcon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interactionPost button {
+  background-color: #e50829;
+  border: none;
+  border-radius: 24px;
+  padding: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
