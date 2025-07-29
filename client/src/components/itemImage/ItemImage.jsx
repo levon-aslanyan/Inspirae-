@@ -1,9 +1,8 @@
 import { Image } from "@imagekit/react";
 
-const ItemImage = ({ path, alt, className, w, h, url, onClick }) => {
+const ItemImage = ({ path, alt, className, w, h, onClick }) => {
   return (
     <Image
-      urlEndpoint={url}
       src={path}
       transformation={[{ width: w, height: h }]}
       loading="lazy"

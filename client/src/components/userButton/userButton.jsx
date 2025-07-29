@@ -11,13 +11,11 @@ const UserButton = () => {
     <div className="userButton">
       <ItemImage
         className="userAvatar"
-        url={URL}
         path="/general/noAvatar.png"
         alt="Avatar"
       />
       <ItemImage
         path="/general/arrow.svg"
-        url={URL}
         alt="Arrow"
         className="arrow"
         onClick={() => setOpen((prev) => !prev)}

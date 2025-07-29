@@ -9,6 +9,7 @@ import AuthPage from "./routes/authPage/authPage.jsx";
 import SearchPage from "./routes/searchPage/searchPage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
 import MainLayout from "./routes/layout/mainLayout.jsx";
+import { ImageKitProvider } from "@imagekit/react";
 
 const router = createBrowserRouter([
   {
@@ -45,8 +46,12 @@ const router = createBrowserRouter([
   },
 ]);
 
+const URL = import.meta.env.VITE_URL_IK_ENDPOINT;
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <ImageKitProvider urlEndpoint={URL}>
+      <RouterProvider router={router}></RouterProvider>
+    </ImageKitProvider>
   </StrictMode>
 );
