@@ -3,6 +3,7 @@ import userRouter from "./routes/user.route.js";
 import pinRouter from "./routes/user.route.js";
 import commentRouter from "./routes/user.route.js";
 import boardRouter from "./routes/user.route.js";
+import connectDB from "./utils/connectDB.js";
 
 const app = express();
 
@@ -12,5 +13,6 @@ app.use("/comments", commentRouter);
 app.use("/boards", boardRouter);
 
 app.listen(3000, () => {
+  connectDB();
   console.log("Server is run");
 });
