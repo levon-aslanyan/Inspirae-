@@ -10,6 +10,9 @@ import SearchPage from "./routes/searchPage/searchPage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
 import MainLayout from "./routes/layout/mainLayout.jsx";
 import { ImageKitProvider } from "@imagekit/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -50,8 +53,10 @@ const URL = import.meta.env.VITE_URL_IK_ENDPOINT;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ImageKitProvider urlEndpoint={URL}>
-      <RouterProvider router={router}></RouterProvider>
-    </ImageKitProvider>
+    <QueryClientProvider client={queryClient}>
+      <ImageKitProvider urlEndpoint={URL}>
+        <RouterProvider router={router}></RouterProvider>
+      </ImageKitProvider>
+    </QueryClientProvider>
   </StrictMode>
 );
